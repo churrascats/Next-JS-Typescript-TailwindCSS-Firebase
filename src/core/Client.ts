@@ -1,27 +1,27 @@
 export default class Client {
-    private _id: string;
-    private _name: string;
-    private _age: number;
+    #id: string;
+    #name: string;
+    #age: number;
 
     static newClient() {
         return new Client("", 0);
     }
 
     constructor(name: string, age: number, id: string = null) {
-        this._name = name;
-        this._age = age;
-        this._id = id;
+        this.#name = name;
+        this.#age = age;
+        this.#id = id;
     }
 
     public get id(): string {
-        return this._id;
+        return this.#id;
     }
 
     public get name(): string {
-        return this._name;
+        return this.#name;
     }
 
     public get age(): number {
-        return this._age;
+        return this.#age;
     }
 }

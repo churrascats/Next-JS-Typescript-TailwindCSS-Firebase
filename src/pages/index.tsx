@@ -1,3 +1,4 @@
+import Form from "../components/form/Form";
 import Layout from "../components/Layout";
 import Table from "../components/Table";
 import Button from "../components/utils/Button";
@@ -6,7 +7,7 @@ import { ButtonColorEnum } from "../model/ButtonProps";
 
 export default function Home() {
     const clients: Client[] = require("../model/ClientsMock").CLIENTS_MOCK;
-
+console.log(clients);
     function selectedClient(client: Client) {
         console.log(client.name);
     }
@@ -21,13 +22,14 @@ export default function Home() {
         >
             <Layout title="User Register">
                 <div className="flex justify-end mb-4">
-                    <Button color={ButtonColorEnum.BLUE}>New Client</Button>
+                    <Button color={ButtonColorEnum.GREEN}>New Client</Button>
                 </div>
                 <Table
                     clients={clients}
                     selectedClient={selectedClient}
                     deletedClient={deletedClient}
                 ></Table>
+                <Form client={clients[2]}></Form>
             </Layout>
         </div>
     );
